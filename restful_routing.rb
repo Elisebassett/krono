@@ -1,7 +1,4 @@
                   Prefix Verb   URI Pattern                    Controller#Action
-                   users GET    /users(.:format)               users#index
-                    user GET    /users/:id(.:format)           users#show
-              home_index GET    /home/index(.:format)          home#index
         new_user_session GET    /users/sign_in(.:format)       users/sessions#new
             user_session POST   /users/sign_in(.:format)       users/sessions#create
     destroy_user_session DELETE /users/sign_out(.:format)      users/sessions#destroy
@@ -17,4 +14,7 @@ cancel_user_registration GET    /users/cancel(.:format)        users/registratio
                          PUT    /users(.:format)               users/registrations#update
                          DELETE /users(.:format)               users/registrations#destroy
                          POST   /users(.:format)               users/registrations#create
+              home_index GET    /home/index(.:format)          home#index
+                   users GET    /users(.:format)               users#index
+                    user GET    /users/:id(.:format)           users#show
                     root GET    /                              home#index
