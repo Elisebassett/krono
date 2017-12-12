@@ -5,6 +5,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'materialize-sass'
+
+gem 'material_icons' 
+
+gem "paperclip", "~> 5.1.0"
 
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
