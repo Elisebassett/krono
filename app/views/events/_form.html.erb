@@ -2,11 +2,15 @@
   
   <div class="input-field">
     <%= f.text_field :title %>
-    <%= f.label :title, 'Title' %>  
+    <% if !@event.title %>
+      <%= f.label :title, 'Title' %>  
+    <% end %>
   </div>
   <div class="input-field">
     <%= f.text_area :description, class: 'materialize-textarea' %>
-    <%= f.label :description, 'description' %>  
+    <% if !@event.description %>
+      <%= f.label :description, 'description' %> 
+    <% end %> 
   </div>
   <div class="input-field">
     <%= f.date_field :start, class: "datepicker start_time" %>
@@ -16,9 +20,11 @@
   </div>
   <div class="input-field">
     <%= f.text_field :color %>
-    <%= f.label :color, 'color' %>  
+    <% if !@event.color %>
+      <%= f.label :color, 'color' %> 
+    <% end %> 
   </div>
   
-  <%= f.submit "Create" %>
+  <%= f.submit "Submit" %>
 
 <% end %>

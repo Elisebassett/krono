@@ -23,6 +23,7 @@ initialize_calendar = function() {
       },//select option
 
       eventDrop: function(event) {
+      	console.log(event);
         event_data = { 
           event: {
             id: event.id,
@@ -37,7 +38,7 @@ initialize_calendar = function() {
         });//ajax call for event update
       },//eventDrop option
 
-      eventClick: function(event, jsEvent, view) {
+      eventClick: function(event) {
         $.getScript(event.edit_url, function() {});
       }
 
