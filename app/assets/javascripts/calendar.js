@@ -26,9 +26,9 @@ initialize_calendar = function() {
 				    closeOnSelect: false // Close upon selecting a date,
 				  });
 
-	        console.log(moment(start).format('MMM Do YY'));
-	      	$('.start_time').val(moment(start).format('MMM Do YY'));
-	      	$('.end_time').val(moment(end).format('MMM Do YY'));
+	        console.log(start);
+	      	$('.start_time').val(moment(start).toISOString());
+	      	$('.end_time').val(moment(end).toISOString());
 				  
         });
         calendar.fullCalendar('unselect');
