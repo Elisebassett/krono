@@ -13,28 +13,36 @@ initialize_calendar = function() {
       editable: true,
       eventLimit: true,
       events: '/events.json',
-
       select: function(start, end) {
       	console.log('problem after this');
         $.getScript('/events/new', function(){
-        	$('.datepicker').pickadate({
-				    selectMonths: true, // Creates a dropdown to control month
-				    selectYears: 15, // Creates a dropdown of 15 years to control year,
-				    today: 'Today',
-				    clear: 'Clear',
-				    close: 'Ok',
-				    closeOnSelect: false // Close upon selecting a date,
-				  });
-
-	        console.log(start);
 	      	$('.start_time').val(moment(start).toISOString());
 	      	$('.end_time').val(moment(end).toISOString());
-				  
-        });
+        });//getscript function
         calendar.fullCalendar('unselect');
+      },//select option
+
+      eventDrop: function(event) {
+        event_data = { 
+          event: {
+            id: event.id,
+            start: event.start.format(),
+            end: event.end.format()
+          }
+        };
+        $.ajax({
+            url: event.update_url,
+            data: event_data,
+            type: 'PATCH'
+        });//ajax call for event update
+      },//eventDrop option
+
+      eventClick: function(event, jsEvent, view) {
+        $.getScript(event.edit_url, function() {});
       }
-		});
-	})
-};
+
+		});//fullCalendar function
+	})//calendar.each function
+};//initialize calendar function
 
 $(document).on('turbolinks:load', initialize_calendar);
