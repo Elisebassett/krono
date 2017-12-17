@@ -6,6 +6,7 @@
       </div>
       <div class="modal-body">
         <%= render 'form', event: @event %>
+        <%= link_to 'Delete', @event, method: :delete, class: 'btn', data: {confirm: 'Are you sure?'}, remote: :true%>
       </div>
     </div>
   </div>
