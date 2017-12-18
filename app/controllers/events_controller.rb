@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_date_params, :only => [:create, :update]
 
   def index
     @events = Event.where(start: params[:start]..params[:end])
@@ -29,11 +30,14 @@ class EventsController < ApplicationController
   end
 
   private
+    def set_date_params
+
+    end
     def set_event
       @event = Event.find(params[:id])
     end
 
     def event_params
-      params.require(:event).permit(:title, :date_range, :start, :end, :color, :description)
+      params.require(:event).permit(:title, :date_range, :start, :end, :color, :description, :start_time, :end_time)
     end
 end

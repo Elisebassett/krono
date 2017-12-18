@@ -14,10 +14,11 @@ initialize_calendar = function() {
       eventLimit: true,
       events: '/events.json',
       select: function(start, end) {
-      	console.log('problem after this');
         $.getScript('/events/new', function(){
-	      	$('.start_time').val(moment(start).toISOString());
-	      	$('.end_time').val(moment(end).toISOString());
+	      	$('.start_date').val(moment(start).toISOString());
+	      	$('.start_time').val('00:00:00');
+	      	$('.end_date').val(moment(end).toISOString());
+	      	$('.end_time').val('00:00:00');
         });//getscript function
         calendar.fullCalendar('unselect');
       },//select option

@@ -2,3 +2,9 @@
 <p>Find me in app/views/home/index.html.erb</p>
 
 <div class="calendar"></div>
+
+<p>list</p>
+
+<% @events.each do |event| %>
+	<li><%= event.title %></li>
+<% end %>
