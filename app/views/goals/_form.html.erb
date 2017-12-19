@@ -1,0 +1,19 @@
+<%= form_with model: @goal do |f| %>
+	<div class="input-field">
+		<%= f.text_field :name %>
+		<% if !@goal.name %>
+			<%= f.label :name, 'Name' %>
+		<% end %>
+	</div>
+	<div class="input-field">
+		<%= f.text_field :description %>
+		<% if !@goal.description %>
+			<%= f.label :description, 'Description' %>
+		<% end %>
+	</div>
+	<div class="input-field">
+		<p>How much time per day can you allocate to this goal?</p>
+		<%= f.select :time_allocation, options_for_select(1..240), {prompt: '0 min'} %>
+	</div>
+	<%= f.submit "Submit" %>
+<% end %>

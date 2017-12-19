@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time_allocation: 1
+  user: one
+  name: MyString
+  description: MyString
+
+two:
+  time_allocation: 1
+  user: two
+  name: MyString
+  description: MyString

@@ -1,4 +1,4 @@
-                  Prefix Verb   URI Pattern                    Controller#Action
+                   Prefix Verb   URI Pattern                    Controller#Action
         new_user_session GET    /users/sign_in(.:format)       users/sessions#new
             user_session POST   /users/sign_in(.:format)       users/sessions#create
     destroy_user_session DELETE /users/sign_out(.:format)      users/sessions#destroy
@@ -14,6 +14,14 @@ cancel_user_registration GET    /users/cancel(.:format)        users/registratio
                          PUT    /users(.:format)               users/registrations#update
                          DELETE /users(.:format)               users/registrations#destroy
                          POST   /users(.:format)               users/registrations#create
+                   goals GET    /goals(.:format)               goals#index
+                         POST   /goals(.:format)               goals#create
+                new_goal GET    /goals/new(.:format)           goals#new
+               edit_goal GET    /goals/:id/edit(.:format)      goals#edit
+                    goal GET    /goals/:id(.:format)           goals#show
+                         PATCH  /goals/:id(.:format)           goals#update
+                         PUT    /goals/:id(.:format)           goals#update
+                         DELETE /goals/:id(.:format)           goals#destroy
                   events GET    /events(.:format)              events#index
                          POST   /events(.:format)              events#create
                new_event GET    /events/new(.:format)          events#new

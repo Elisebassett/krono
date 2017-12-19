@@ -3,8 +3,6 @@ class EventsController < ApplicationController
   before_action :set_date_params, :only => [:create, :update]
 
   def index
-    # @events = Event.where(start: params[:start]..params[:end])
-    @events = Event.all
   end
 
   def show
