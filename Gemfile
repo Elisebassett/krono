@@ -58,6 +58,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'jquery-rails'
 gem 'materialize-sass'
 
+#profile
+gem 'devise'
+gem "paperclip", "~> 5.1.0"
+
 #scheduling
 source 'https://rails-assets.org' do
   gem 'rails-assets-fullcalendar'

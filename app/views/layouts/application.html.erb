@@ -12,6 +12,22 @@
 
   <body>
     <div class="container">
+      <nav>
+        <ul>
+          <% if current_user %>
+            <li><%= link_to "Edit Account", edit_user_registration_path %></li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Login", new_user_session_path %></li>
+            <li><%= link_to "Create New User", new_user_registration_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+
+      <div class="notice">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
     	<%= yield %>
   	</div>
   	<div id="remote_container"></div>

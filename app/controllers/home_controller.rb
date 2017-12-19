@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   def index
-  	@events = Event.all
+  	if user_signed_in?
+  		redirect_to current_user
+  	end
   end
 end
