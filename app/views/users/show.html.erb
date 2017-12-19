@@ -18,6 +18,13 @@
 </div>
 <div id="goals" class="col s12">
 	<div class="row">
-		
+		<button id="create_goal">Set New Goal</button>
+		<div id="goal_display_container">
+			<% if !current_user.goals.blank? %>
+				<%= render @goals %>
+			<% else %>
+				<h5>Let's set some goals <%= current_user.first_name %>!</h5>
+			<% end %>
+		</div>
 	</div>
 </div>

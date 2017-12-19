@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171219173000) do
+ActiveRecord::Schema.define(version: 20171219205011) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 20171219173000) do
     t.time "start_time"
     t.time "end_time"
     t.integer "user_id"
+  end
+
+  create_table "goals", force: :cascade do |t|
+    t.integer "time_allocation"
+    t.integer "user_id"
+    t.string "name"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
