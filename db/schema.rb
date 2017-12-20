@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20171220013643) do
   end
 
   create_table "goals", force: :cascade do |t|
+    #time_allocation is saved in db as minutes.
     t.integer "time_allocation"
     t.integer "user_id"
     t.string "name"

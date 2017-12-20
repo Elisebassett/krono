@@ -1,3 +1,16 @@
 class Goal < ApplicationRecord
   belongs_to :user
-end
+
+
+
+  def add_to_tomorrow
+
+  	 #set variable
+
+    
+  	
+  end #add_to_tomorrow
+
+
+
+end #Goal class

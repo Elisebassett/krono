@@ -1,4 +1,5 @@
                   Prefix Verb   URI Pattern                    Controller#Action
+                set_goal POST   /goals/set_goal/:id(.:format)  goals#set_goal
         new_user_session GET    /users/sign_in(.:format)       users/sessions#new
             user_session POST   /users/sign_in(.:format)       users/sessions#create
     destroy_user_session DELETE /users/sign_out(.:format)      users/sessions#destroy
