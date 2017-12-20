@@ -19,6 +19,7 @@ class GoalsController < ApplicationController
   end
 
   def edit
+    
   end
 
   def update
@@ -30,6 +31,10 @@ class GoalsController < ApplicationController
       @goal.destroy
       format.js # destroy.js.erb
     end
+  end
+
+  def edit_goal
+    render 'edit', layout: false
   end
 
   private
