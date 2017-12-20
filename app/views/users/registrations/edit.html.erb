@@ -16,6 +16,16 @@
   </div>
 
   <div class="field">
+    <p>When do you usually wake up?</p>
+     <%= f.text_field :rise, class: "timepicker rise_picker", placeholder: '7:00' %>
+  </div>
+
+  <div class="field">
+    <p>When do you usually go to sleep?</p>
+     <%= f.text_field :sleep, class: "timepicker sleep_picker", placeholder: '22:30' %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
   </div>
