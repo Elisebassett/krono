@@ -3,6 +3,7 @@ class EventsController < ApplicationController
   before_action :set_date_params, :only => [:create, :update]
 
   def index
+    @events = current_user.events.where(start: params[:start]..params[:end])
   end
 
   def show
@@ -44,6 +45,11 @@ class EventsController < ApplicationController
 
     def set_event
       @event = Event.find(params[:id])
+    end
+
+    def tomorrow
+      @tomorrow_events = user.events.where('DATE(start) = ?', Date.tomorrow)
+      @tomorrow_events.sort_by &:start
     end
 
     def event_params
