@@ -47,10 +47,6 @@ class EventsController < ApplicationController
       @event = Event.find(params[:id])
     end
 
-    def tomorrow
-      @tomorrow_events = user.events.where('DATE(start) = ?', Date.tomorrow)
-      @tomorrow_events.sort_by &:start
-    end
 
     def event_params
       params.require(:event).permit(:title, :date_range, :start, :start_time, :end, :end_time, :color, :description)
