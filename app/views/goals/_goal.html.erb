@@ -4,7 +4,7 @@
       <div class="card-content white-text">
         <span class="card-title"><%= goal.name %></span>
         <p><%= goal.description %></p>
-        <%= link_to "Set Tomorrow's Goals", set_goal_path(goal), method: :post %>
+        <%= link_to "Set Tomorrow's Goals", set_goal_event_path(goal), method: :post %>
       </div>
       <div class="card-action">
 				<a class="edit_goal_trigger">Edit</a>

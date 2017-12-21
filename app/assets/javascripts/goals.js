@@ -1,5 +1,13 @@
 $(document).on('turbolinks:load', function(){
+
+//Set Timezone
+	function set_time_zone_offset() {
+    var current_time = new Date();
+    Cookies.set('time_zone', current_time.getTimezoneOffset());
+	}
 	
+	set_time_zone_offset();
+
 	$('#create_goal').on('click', function() {
 		$.getScript('/goals/new', function() {});//getScript function
 	});//create goal on click

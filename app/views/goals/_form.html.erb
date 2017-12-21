@@ -15,5 +15,15 @@
 		<p>How much time per day can you allocate to this goal?</p>
 		<%= f.select :time_allocation, options_for_select(1..240), {prompt: '0 min'} %>
 	</div>
+	<!--***** Color ******-->
+  <div class="input-field">
+    <%= f.select(:color) do %>
+      <option value="" disabled selected>Select a Tag</option>
+      <option class="work-tag" value="light blue">Health</option>
+      <option class="school-tag" value="teal">Self Improvement</option>
+      <option class="other-tag" value="green">Other</option>
+    <% end %>
+  </div>
+
 	<%= f.submit "Submit" %>
 <% end %>
