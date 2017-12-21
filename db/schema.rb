@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171220013643) do
+ActiveRecord::Schema.define(version: 20171221003329) do
 
   create_table "events", force: :cascade do |t|
     t.string "title"
@@ -26,13 +26,13 @@ ActiveRecord::Schema.define(version: 20171220013643) do
   end
 
   create_table "goals", force: :cascade do |t|
-    #time_allocation is saved in db as minutes.
     t.integer "time_allocation"
     t.integer "user_id"
     t.string "name"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "color"
     t.index ["user_id"], name: "index_goals_on_user_id"
   end
 
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20171220013643) do
     t.datetime "avatar_updated_at"
     t.time "sleep"
     t.time "rise"
+    t.string "timezone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

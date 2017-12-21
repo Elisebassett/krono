@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-	post '/goals/set_goal/:id' => 'goals#set_goal', as: 'set_goal'
+	post '/goals/set_goal_event/:id' => 'goals#set_goal_event', as: 'set_goal_event'
 
 	devise_for :users, controllers: {
     sessions: 'users/sessions',
