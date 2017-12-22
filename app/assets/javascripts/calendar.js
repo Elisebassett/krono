@@ -29,9 +29,12 @@ initialize_calendar = function() {
           event: {
             id: event.id,
             start: event.start.format(),
-            end: event.end.format()
+            start_time: event.start_time,
+            end: event.end.format(),
+            end_time: event.end_time
           }
         };
+        console.log(event_data);
         $.ajax({
             url: event.update_url,
             data: event_data,
