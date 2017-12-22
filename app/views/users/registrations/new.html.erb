@@ -28,11 +28,6 @@
   </div>
 
   <div class="field">
-    <p>What time zone are you in?</p>
-    <%= f.time_zone_select :timezone, TimeZone.us_zones %>
-  </div>
-
-  <div class="field">
     <p>When do you usually wake up?</p>
      <%= f.text_field :rise, class: "timepicker rise_picker", placeholder: '7:00' %>
   </div>

@@ -34,11 +34,14 @@ class EventsController < ApplicationController
     def set_date_params      
       if params[:event][:start].present?
         # set start
-        params[:event][:start] = Time.zone.parse( params[:event][:start] + ' ' + params[:event][:start_time] + ':00')
+        params[:event][:start] = Time.zone.parse(params[:event][:start] + ' ' + params[:event][:start_time] + ':00')
+        p 'START PARAMS'
         p params[:event][:start]
+        
         # params[:event].delete(:start_time)
   #####set end
         params[:event][:end] = Time.zone.parse( params[:event][:end] + ' ' + params[:event][:end_time] + ':00')
+        p 'END PARAMS'
         p params[:event][:end]
         # params[:event].delete(:end_time)
       end
